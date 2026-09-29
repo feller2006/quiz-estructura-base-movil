@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect } from "react";
+import { View, Text, Button } from "react-native";
+import { initDatabase } from "./src/infrastructure/database/database";
 
 export default function App() {
+
+  useEffect(() => {
+    initDatabase();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{ padding: 40 }}>
+      <Text>
+        Quiz Estructura Base Móvil
+      </Text>
+
+      <Button
+        title="Registrar Usuarios"
+        onPress={() => {}}
+      />
+
+      <Button
+        title="Registrar Productos"
+        onPress={() => {}}
+      />
+
+      <Button
+        title="Registrar Personas"
+        onPress={() => {}}
+      />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
